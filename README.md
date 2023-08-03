@@ -1,0 +1,13 @@
+# Analysing and Predicting the GHG Emission from Agricultiural Activities using Machine Learning Models.
+
+Dataset Link : 
+
+Kaggle Dataset Link : https://www.kaggle.com/datasets/rohanrao/air-quality-data-in-india
+
+Libraries Used
+
+1. Pre - Processing (Pandas, Numpy, missingno)
+2. Graphical Representration (Matplotlib, seaborn)
+3. Scaling and Over-sampling (Sklearn.preprocessing, imblearn)
+4. Model Building (Statsmodels)
+
