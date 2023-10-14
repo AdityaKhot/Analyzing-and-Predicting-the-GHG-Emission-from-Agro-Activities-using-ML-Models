@@ -15,6 +15,10 @@ Libraries Used
 5. AutoRegression model (SARIMA)
 6. Adaptive KNN Model
 7. XG Boost Model
+8. Accuracy Testing
+9. MAPE Error testing
+10. Root Mean Square Error testing
+
 
 
 
