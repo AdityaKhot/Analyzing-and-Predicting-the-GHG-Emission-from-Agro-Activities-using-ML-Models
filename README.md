@@ -16,8 +16,7 @@ Libraries Used
 6. Adaptive KNN Model
 7. XG Boost Model
 8. Accuracy Testing
-9. MAPE Error testing
-10. Root Mean Square Error testing
+9. MAPE Error and Root Mean Square Error testing
 
 
 
