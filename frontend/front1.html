@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+  background-image: url('./adity_bgm.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  display: flex;
+  align-items: center;
+  justify-content:center;
+  height: 100vh;
+  padding: 20px;
+  flex-direction: column;
+}
+
+.home-button {
+  position: absolute;
+  top: 25px;
+  left: 50px;
+  z-index: 3;
+}
+
+.home-button button {
+  background-color:black; /* Same color as other buttons */
+  color: white; /* Text color */
+  padding: 10px 20px; /* Padding */
+  margin: 5px 0; /* Margin */
+  border: none; /* No border */
+  cursor: pointer;
+  border-radius: 5px; /* Rounded corners */
+  width: 80px; /* Width */
+  font-size: 16px; /* Font size */
+}
+
+.button-container-1 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  z-index: 2;
+  margin-top: 20px;
+  margin-left: 20px;
+  padding-left: 20px;
+  margin-right: auto;
+}
+
+.button-container-1 button {
+  background-color:black;
+  color:white;
+  padding: 10px 20px;
+  margin: 5px 0;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 200px;
+}
+
+.heading-container-1 {
+  text-align: center;
+  width: 100%;
+  margin-bottom: 20px;
+  padding-top: 10px;
+}
+
+.heading-container-1 h1 {
+  margin: 0;
+  color:black;
+}
+
+.button-container-2 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  z-index: 2;
+  margin-top: 10px;
+  padding-top: 20px; /* Increase padding from top */
+  margin-left: 20px;
+  padding-left: 20px;
+  margin-right: auto;
+}
+
+.button-container-2 button {
+  background-color:black;
+  color:white;
+  padding: 10px 20px;
+  margin: 5px 0;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 200px;
+}
+
+.heading-container-2 {
+  text-align: center;
+  width: 100%;
+  margin-bottom: 20px;
+  padding-top: 50px;
+}
+
+.heading-container-2 h1 {
+  margin: 0;
+  color:black;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+.modal-content img {
+  width: 100%;
+  height: auto;
+}
+
+
+</style>
+</head>
+<body>
+
+  <div class="home-button">
+    <button onclick="goHome()">Home</button>
+  </div>
+
+  <div class="heading-container-1">
+    <h1>Anticipated GHG Emissions in India Based on FAOSTAT Data</h1>
+  </div>
+
+  <div class="button-container-1">
+    <button onclick="displayImage('./faostat_graphs/ch4_faostat.jpg')">CH4 Graph</button>
+    <button onclick="displayImage('./faostat_graphs/co2_faostat.jpg')">CO2 Graph</button>
+    <button onclick="displayImage('./faostat_graphs/n2o_faostat.jpg')">N2O Graph</button>
+  </div>
+
+  <div class="heading-container-2">
+    <h1>Forecasted Atmospheric Gas Concentrations in India Using Air Quality Data</h1>
+  </div>
+
+  <div class="button-container-2">
+    <button onclick="displayImage('./kaggle_graphs/image1.jpg')">NO Train Graph</button>
+    <button onclick="displayImage('./kaggle_graphs/image2.jpg')">NO Test Graph</button>
+    <button onclick="displayImage('./kaggle_graphs/image3.jpg')">N2O Train Graph</button>
+    <button onclick="displayImage('./kaggle_graphs/image4.jpg')">N2O Test Graph</button>
+    <button onclick="displayImage('./kaggle_graphs/image5.jpg')">CO Train Graph</button>
+    <button onclick="displayImage('./kaggle_graphs/image6.jpg')">CO Test Graph</button>
+  </div>
+
+<div id="myModal" class="modal">
+  <span class="close" onclick="closeModal()">&times;</span>
+  <img class="modal-content" id="modalImg">
+</div>
+
+<script>
+function displayImage(imageSrc) {
+  var modal = document.getElementById("myModal");
+  var modalImg = document.getElementById("modalImg");
+  modal.style.display = "block";
+  modalImg.src = imageSrc;
+}
+
+function closeModal() {
+  var modal = document.getElementById("myModal");
+  modal.style.display = "none";
+}
+
+function goHome() {
+  window.location.href = "./home.html";
+}
+
+window.onclick = function(event) {
+  var modal = document.getElementById("myModal");
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+
+</body>
+</html>

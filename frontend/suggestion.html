@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greenhouse Gas Control Measures</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-image: url('./image.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            margin: 0;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            position: absolute;
+            top: 10px;
+        }
+
+        .button-container .button {
+            border: none;
+            background: #3498db;
+            color: #fff;
+            cursor: pointer;
+            font-size: 18px;
+            margin: 40px;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+
+        .container {
+            max-width: 800px;
+            background-color: rgba(255, 255, 255, 0.6);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 150px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        select {
+            padding: 8px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        #controlMeasures {
+            text-align: left;
+            margin-top: 20px;
+        }
+
+        p {
+            font-size: 16px;
+            color: rgba(0, 0, 0, 1.0);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="button-container">
+        <a href="./home.html" class="button left">Home</a>
+        <a href="./front1.html" class="button right">Prediction Graphs</a>
+    </div>
+
+    <div class="container">
+        <h1>Control Measures for GHG Emission</h1>
+        <h2>Select Greenhouse Gas</h2>
+
+        <label for="gasSelect">Select Gas:</label>
+        <select id="gasSelect">
+            <option value="CO2">CO2</option>
+            <option value="N2O">N2O</option>
+            <option value="CH4">CH4</option>
+        </select>
+
+        <div id="controlMeasures"></div>
+    </div>
+
+    <script>
+        document.getElementById('gasSelect').addEventListener('change', function() {
+            var selectedGas = this.value;
+            var controlMeasuresElement = document.getElementById('controlMeasures');
+
+            var controlMeasures = {
+                'CO2': 'Reducing CO2 emissions in agriculture is crucial for mitigating climate change. Here are solutions for different agricultural activities:<br><br>1. Cattle Farming:<br><br>a. Improved Feeding Practices: Implementing balanced diets to maximize livestock efficiency, which reduces the amount of methane produced during digestion. Incorporating high-quality forages and legumes in the diet to improve digestion.<br>b. Enteric Fermentation Inhibitors: Research and implement feed supplements like seaweed or additives that can reduce methane emissions from the digestive system of cattle.<br>c. Rotational Grazing: Implementing managed rotational grazing systems can optimize the use of pastures, enhance soil health, and sequester carbon.<br>d. Breeding for Low Methane Emissions: Selectively breeding livestock for traits associated with lower methane production can help reduce emissions over time.<br>e. Manure Management: Properly managing manure to minimize methane emissions. This may include composting, anaerobic digestion, or aerobic treatment.<br><br>2. Organic Manure Management:<br><br>a. Composting: Composting organic matter before application can help stabilize nutrients and reduce emissions of methane and nitrous oxide.<br>b. Anaerobic Digestion: Converting organic waste into biogas through anaerobic digestion can capture and utilize methane for energy while reducing emissions.<br>c. Cover Cropping: Growing cover crops helps protect soil, increase organic matter content, and sequester carbon.<br>d. No-Till or Reduced Tillage: Minimizing soil disturbance can help maintain soil structure, retain carbon, and reduce emissions.<br>e. Crop Rotation: Implementing diverse crop rotations can improve soil health and reduce the need for synthetic fertilizers.<br><br>3. Burning Crop Residues:<br><br>a. Alternative Disposal Methods: Consider using other methods like mulching, incorporation, or leaving crop residues on the field as mulch to reduce the need for burning.<br>b. Biochar Production: Converting crop residues into biochar through pyrolysis can sequester carbon and improve soil fertility.<br>c. Regulations and Incentives: Implementing regulations or providing incentives to discourage or regulate the burning of crop residues. <br><br>4. Other Agricultural Activities:<br><br>a. Precision Agriculture: Using technology like GPS-guided tractors and drones for precise application of inputs, which can optimize resource use and reduce emissions.<br>b. Agroforestry and Silvopasture: Integrating trees into agricultural landscapes can sequester carbon, provide additional income, and improve biodiversity.<br>c. Wetland Restoration: Reestablishing or protecting wetlands on agricultural lands can sequester large amounts of carbon.<br>d. Carbon Farming Practices: Implementing practices like agroecology, permaculture, and regenerative agriculture that focus on building soil health and sequestering carbon.<br>e. Renewable Energy Adoption: Installing renewable energy systems (solar, wind, etc.) on farms can reduce reliance on fossil fuels and decrease emissions associated with energy use.<br><br>It is important to note that the effectiveness of these solutions may vary depending on factors such as location, climate, soil type, and farm size. A combination of these strategies, tailored to specific circumstances, can have a significant impact on reducing CO2 emissions in agriculture. Additionally, supporting policies, incentives, and education programs can encourage widespread adoption of sustainable agricultural practices.',
+                'CH4': 'Reducing methane (CH4) emissions from agricultural activities is important for mitigating climate change. Here are some solutions for reducing CH4 emissions from different agricultural activities:<br><br>1. Cattle Farming:<br><br>Improved Feeding Practices: Implementing better feeding practices can help improve the digestive efficiency of cattle, reducing the amount of methane produced per unit of food consumed.<br>Methane Inhibitors/Additives: Certain feed additives, such as tannins, can be used to inhibit methane production in the digestive system of cattle.<br>Rotational Grazing: Managing grazing patterns can improve pasture quality and reduce methane emissions.<br><br>2. Organic Manure Management:<br><br>Anaerobic Digestion: Anaerobic digestion of manure can capture and convert methane into biogas for energy production, reducing emissions.<br>Aerobic Composting: Properly managing compost piles in aerobic conditions can help prevent methane emissions.<br><br>3. Burning Crop Residues:<br><br>No-Till Farming: Implementing no-till or minimum tillage practices can help leave crop residues on the field, reducing the need for burning.<br>Cover Cropping: Using cover crops can help maintain soil health and reduce the need for burning crop residues.<br><br>4. Other Agricultural Activities:<br><br>Rice Farming: Implementing practices like intermittent flooding and using alternative wetting and drying (AWD) techniques can reduce methane emissions from rice paddies.<br>Avoiding Over-Irrigation: Proper water management can prevent waterlogging and reduce anaerobic conditions, which can lead to methane production in the soil.<br>Precision Agriculture: Using technology to optimize fertilizer application and irrigation can reduce emissions associated with nutrient management.<br><br>5. General Practices:<br><br>Nutrient Management: Implementing balanced nutrient management practices can reduce the overuse of nitrogen-based fertilizers, which can lead to increased methane emissions.<br>Rotational Cropping: Implementing diverse crop rotations can help improve soil health and reduce the need for certain methane-producing activities.<br><br>6. Education and Training:<br><br>Providing farmers with education and training on best practices for methane reduction can be highly effective in implementing sustainable agricultural practices.<br><br>7. Policy and Regulation:<br><br>Governments can implement policies and regulations that incentivize or mandate the adoption of methane-reducing practices in agriculture.<br><br>8. Research and Innovation:<br><br>Continued research into new technologies, feed additives, and management practices can lead to more effective and efficient methods for reducing methane emissions in agriculture.<br>It is important to note that the effectiveness of these solutions can vary depending on factors such as location, climate, and specific agricultural practices. A combination of these approaches, tailored to specific contexts, may yield the best results. Additionally, promoting sustainable and regenerative agricultural practices can have multiple benefits, including reduced methane emissions.',
+                'N2O': 'Reducing nitrous oxide (N2O) emissions from agricultural activities is important for mitigating climate change and improving air quality. Here are some solutions for reducing N2O emissions from different agricultural activities: <br><br>1. Cattle Farming:<br><br>Improved Feeding Practices: Implementing balanced and optimized diets for livestock can reduce enteric fermentation, which is a major source of N2O emissions from cattle. <br>This can include the use of improved forage quality and supplementation with feed additives like nitrification inhibitors. <br>Manure Management: Proper management of manure can significantly reduce N2O emissions. <br>This includes practices like regular cleaning of barns, proper storage and handling of manure, and using anaerobic digesters or composting systems.  <br><br>2. Organic Manure Management: <br><br>Composting: Composting organic matter before application as fertilizer can help reduce N2O emissions. <br>The composting process stabilizes nitrogen and makes it more readily available to plants.<br>Incorporation Timing: Applying organic manure closer to the planting time can help reduce the time available for N2O production, as it allows the nitrogen to be taken up by plants more efficiently.<br><br>3. Burning Crop Residues:<br><br>Tillage Practices: Adopting reduced tillage or no-till farming practices can help retain crop residues on the field surface, reducing the need for burning. <br>This can also help improve soil health and carbon sequestration.<br><br>4. Other Agricultural Activities:<br><br>Cover Cropping: Planting cover crops during fallow periods can help sequester nitrogen in the soil and reduce the potential for N2O emissions.<br>Precision Fertilizer Application: Using precision agriculture techniques, such as variable rate application of fertilizers, helps ensure that nutrients are applied where and when they are needed, reducing excess nitrogen in the soil that could be converted to N2O.<br>Nitrification Inhibitors: Applying nitrification inhibitors to fertilizers can help reduce the conversion of ammonium to nitrate, which is a precursor to N2O emissions.<br><br>5. General Best Management Practices:<br> <br>Crop Rotation: Implementing diverse crop rotations can help optimize nutrient cycling, reduce the need for synthetic fertilizers, and decrease the potential for N2O emissions.<br>Soil Testing: Regular soil testing can help determine the nutrient needs of a specific field, enabling more precise fertilizer application.<br><br>6. Education and Outreach:<br><br>Farmer Training: Providing education and training to farmers on sustainable agricultural practices, including those that reduce N2O emissions, can lead to widespread adoption of these techniques.<br>It is important to note that the effectiveness of these solutions can vary depending on local conditions, including climate, soil type, and specific agricultural practices. Therefore, it is recommended to consult with local agricultural experts and extension services for guidance tailored to specific regions and circumstances. <br><br>Additionally, policies and incentives that promote sustainable agricultural practices can play a crucial role in encouraging the adoption of these solutions.'}
+
+            controlMeasuresElement.innerHTML = `<h2>Control Measures for ${selectedGas}</h2><p>${controlMeasures[selectedGas]}</p>`;
+        });
+    </script>
+</body>
+
+</html>
